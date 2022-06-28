@@ -4,7 +4,7 @@ class ApplicationController < Sinatra::Base
   # Add your routes here
   get "/contests" do
     contest = Contest.all.order(:start_time)
-    contest.to_json(include: :site)
+    contest.to_json
   end
 
   post "/contests" do
@@ -14,7 +14,8 @@ class ApplicationController < Sinatra::Base
       start_time: params[:start_time],
       end_time: params[:end_time],
       duration: params[:duration],
-      site: params[:site]
+      site: params[:site],
+      hosting_website: params[:hosting_website]
     )
     new_contest.to_json
   end
@@ -27,7 +28,8 @@ class ApplicationController < Sinatra::Base
       start_time: params[:start_time],
       end_time: params[:end_time],
       duration: params[:duration],
-      site: params[:site]
+      site: params[:site],
+      hosting_website: params[:hosting_website]
     )
     updated_contest.to_json
   end

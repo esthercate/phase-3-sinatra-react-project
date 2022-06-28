@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_24_062505) do
+ActiveRecord::Schema.define(version: 2022_06_28_091007) do
 
   create_table "contests", force: :cascade do |t|
     t.string "contest_name"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2022_06_24_062505) do
     t.text "end_time"
     t.integer "duration"
     t.integer "site_id"
+    t.string "hosting_website"
   end
 
   create_table "sites", force: :cascade do |t|
