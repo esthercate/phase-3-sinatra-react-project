@@ -5,11 +5,11 @@ default: &default
 
 development:
   <<: *default
-  database: db/development.sqlite3
+  url: "postgresql://postgres:postgres@localhost:5432/database_name"
 
 test:
   <<: *default
-  database: db/test.sqlite3
+  url: "postgresql://postgres:postgres@localhost:5432/test_database_name"
 
 production:
   <<: *default
