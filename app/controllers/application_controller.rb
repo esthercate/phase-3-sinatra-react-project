@@ -3,7 +3,7 @@ class ApplicationController < Sinatra::Base
   
   # Add your routes here
   get "/contests" do
-    contest = Contest.all.order(:start_time)
+    contest = Contest.all.order(:created_at)
     contest.to_json
   end
 
@@ -35,7 +35,7 @@ class ApplicationController < Sinatra::Base
   end
 
   delete "/contests/:id" do
-    deleted_contest = Contest.find(params[:id])
+    deleted_contest = Contest.find(params[:id]).order(:created_at)
     deleted_contest.destroy
     deleted_contest.to_json
   end

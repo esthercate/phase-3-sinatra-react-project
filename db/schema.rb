@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_28_091007) do
+ActiveRecord::Schema.define(version: 2022_06_29_100314) do
 
   create_table "contests", force: :cascade do |t|
     t.string "contest_name"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 2022_06_28_091007) do
     t.integer "duration"
     t.integer "site_id"
     t.string "hosting_website"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "sites", force: :cascade do |t|
